@@ -10,6 +10,13 @@ const express = require('express');
 // This creates our web app.
 const app = express();
 
+// Kinda confusng but this is so that the server
+// automtically looks for files in resources/ folder 
+// when a request comes in.
+// Try: http://localhost:3000/index.html
+// Try: http://localhost:3000/main.js 		// Will actually give you the text of main.js
+app.use(express.static('resources'))
+
 // This is the method that gets called when you go to our
 // server's home page. (aka: http://localhost:3000/)
 app.get('/', function(req, res) {
