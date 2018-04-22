@@ -26,9 +26,9 @@
 
 - **node_modules/**: This is the folder where the packages/libraries (listed in `package.json`) are installed. This shows up after running `npm install` above.
 
-- **Git-Basics.md**: Just a guide on how to use Git for project management.
+- **tutorials/Git-Basics.md**: Just a guide on how to use Git for project management.
 
-- **Javascript-Basics.md**: Very brief overview of Javascript.
+- **tutorials/Javascript-Basics.js**: Very brief overview of Javascript.
 
 - **resources/index.html**: An HTML skeleton for a website.
 
