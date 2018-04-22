@@ -24,4 +24,12 @@
 
 - **package.json**: This is the config file for your server. Not necessary to understand everything, just has the libraries that we're going to use for our server.
 
-- **node_modules/**: This is the folder where the packages/libraries (listed in `package.json`) are installed.
+- **node_modules/**: This is the folder where the packages/libraries (listed in `package.json`) are installed. This shows up after running `npm install` above.
+
+- **Git-Basics.md**: Just a guide on how to use Git for project management.
+
+- **Javascript-Basics.md**: Very brief overview of Javascript.
+
+- **resources/index.html**: An HTML skeleton for a website.
+
+- **resources/main.js**: A javascript file that runs on the HTML file above.
