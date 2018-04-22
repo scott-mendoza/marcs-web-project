@@ -33,3 +33,5 @@
 - **resources/index.html**: An HTML skeleton for a website.
 
 - **resources/main.js**: A javascript file that runs on the HTML file above.
+
+- **.gitignore**: Ignore this.
