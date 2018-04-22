@@ -17,11 +17,10 @@ const app = express();
 // Try: http://localhost:3000/main.js 		// Will actually give you the text of main.js
 app.use(express.static('resources'))
 
-// This is the method that gets called when you go to our
-// server's home page. (aka: http://localhost:3000/)
-app.get('/', function(req, res) {
-	res.send('Hey Marc');
-});
+// When you visit:
+// http://localhost:3000/ -> You will see the contents of index.html
+// This is because, index.html is synonymous for home-page.
+// To edit your site, go to resources/ directory. 
 
 // This method gets called when you visit http://localhost:3000/secret
 // This called a route (aka the different paths of website.)
