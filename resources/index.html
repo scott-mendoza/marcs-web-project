@@ -1,20 +1,97 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Marc's Website</title> 	<!-- Set your webpage title -->
 		<script src="main.js"></script>	<!-- Load in your Javascript-->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> <!-- This massive thing is loading in some style from Bootstrap -->
 	</head>
 	<body>
-		<h1 id="header">My header</h1>
-		<p>This is just some boilerplate folks. But if you click on the button,
-			you'll see that the header changes. See main.js for details. 
-		</p>
-		<button id='button1' type="button">Click click</button>
-		<p>
-			Also, get acquainted with the developer tools. Right click the webpage
-			and click "inspect element". You can look at the console tab.
-			This is where all your console.log() statements go.
-		<p>
+		<!-- 
+			This creates a dark-themed navbar, and fixes it at the top
+			of the screen, so no matter where we scroll it stays at the top.
+			Notice that the easiness of bootstrap is that by setting
+			the class names, we get different customization. You
+			can add more things here, like a field to set your
+			username or whatever.
+
+			See here for more info/customization:
+
+			https://getbootstrap.com/docs/4.0/components/navbar/ 
+		-->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="/">Marc's Chat</a>
+		</nav>
+
+		<!-- 
+			This creates a list, which would act as our chat-log.
+			The interesting part is going to be adding new
+			messages to this list as they come.
+
+			See here for more info/customization:
+
+			https://getbootstrap.com/docs/4.0/components/list-group/ 
+		-->
+		<ul class="list-group">
+			<li class="list-group-item">Oscar: Element 1</li>
+			<li class="list-group-item">Scott: Numero 2</li>
+			<li class="list-group-item">Marc: Cosa 3</li>
+			<li class="list-group-item">Scott: Thing 4</li>
+			<li class="list-group-item">Oscar: Madeitto 5</li>
+			<!-- 
+				Copy and paste the above list-items at couple times
+				if you want to see what our web-page does when
+				we have a bunch of messages to show.
+			-->
+		</ul>
+		
+
+		<!-- 
+			This creates our message input bar. It has a text
+			box to type your message and a "Send" button.
+			Also, it's fixed to the bottom of the screen so 
+			if a lot of messages come in, you don't have to scroll
+			to the bottom to send a message.
+			As you can see, you can click the send-button, but 
+			it isn't doing anything cause we don't have any
+			Javascript hooked up to it.
+
+			See here for more info/customization:
+
+			https://getbootstrap.com/docs/4.0/components/input-group/
+		-->
+		<div class="input-group fixed-bottom input-group-lg">
+		  <input type="text" class="form-control" placeholder="Chat here" aria-label="Chat here" aria-describedby="basic-addon1">
+		  <span class="input-group-btn">
+			<button class="btn btn-secondary" type="button">Send!</button>
+		  </span>
+		</div>
+
+	
+	
+		<!--
+			This is just loading in some of the Javascript libraries 
+			for Bootstrap. It's just required, don't worry about it,
+			you can read more about it in the Bootstrap Getting Started
+			page, but it's just boilerplate.
+		-->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<!--
+			This is some CSS that I'm adding to our webpage, so that the
+			top and bottom navigation bars do not cover other elements in the body.
+			(cause they're kinda floating in our webpage.) It's just
+			adding padding to the top and bottom.
+		-->
+		<style>
+			body { 
+				padding-top: 70px; 
+				padding-bottom: 70px;
+			}
+		</style>
 	</body>
 </html>
