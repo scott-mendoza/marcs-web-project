@@ -4,8 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Marc's Website</title> 	<!-- Set your webpage title -->
-		<script src="main.js"></script>	<!-- Load in your Javascript-->
-
+		<!-- See the end of the Body for Javascript files. -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> <!-- This massive thing is loading in some style from Bootstrap -->
 	</head>
 	<body>
@@ -34,12 +33,12 @@
 
 			https://getbootstrap.com/docs/4.0/components/list-group/ 
 		-->
-		<ul class="list-group">
-			<li class="list-group-item">Oscar: Element 1</li>
+		<ul id="messageList" class="list-group">
+			<!-- <li class="list-group-item">Oscar: Element 1</li>
 			<li class="list-group-item">Scott: Numero 2</li>
 			<li class="list-group-item">Marc: Cosa 3</li>
 			<li class="list-group-item">Scott: Thing 4</li>
-			<li class="list-group-item">Oscar: Madeitto 5</li>
+			<li class="list-group-item">Oscar: Madeitto 5</li> -->
 			<!-- 
 				Copy and paste the above list-items at couple times
 				if you want to see what our web-page does when
@@ -69,9 +68,9 @@
 			seen this style of elements before.
 		-->
 		<div class="input-group fixed-bottom input-group-lg">
-		  <input type="text" class="form-control" placeholder="Chat here" aria-label="Chat here" aria-describedby="basic-addon1">
+		  <input id="messageBox" type="text" class="form-control" placeholder="Chat here" aria-label="Chat here" aria-describedby="basic-addon1">
 		  <span class="input-group-btn">
-			<button class="btn btn-secondary" type="button">Send!</button>
+			<button id="sendButton" class="btn btn-secondary" type="button">Send!</button>
 		  </span>
 		</div>
 
@@ -86,6 +85,15 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<!--
+			This is where we load in the Socket.io library.
+		-->
+		<script src="/socket.io/socket.io.js"></script>
+		<!-- 
+			Load in our Javascript
+		-->
+		<script src="main.js"></script>	
 
 		<!--
 			This is some CSS that I'm adding to our webpage, so that the
