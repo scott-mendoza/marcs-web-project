@@ -53,15 +53,27 @@ app.get('/route', function(requestObject, responseObject) {
 	responseObject.send('Send whatever you want');
 });
 
+var usercount = 0;
+
 // Listen for socket connections
 io.on('connection', function(socket) {
 	console.log('User connected');
+	usercount++ ;
+	io.emit("messagePosted", "Users logged in: " + usercount) ; 
 	// Listen for a particular socket sending a message.
 	socket.on('messageSent', function(message){
 		console.log('Message: ' + message);
 		// When we receive the message, send it to all
 		// other users on our site.
 		io.emit("messagePosted", message);
+	});
+	
+	socket.on('disconnect', function(){
+		console.log('Message: ' + message);
+		usercount-- ;
+		// When we receive the message, send it to all
+		// other users on our site.
+		io.emit("messagePosted", "Users logged in: " + usercount) ; 
 	});
 });
 
