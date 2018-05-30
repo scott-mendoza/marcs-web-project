@@ -5,7 +5,9 @@
 // 	  # https://expressjs.com/en/4x/api.html
 //    This link is the documentation for ExpressJS, but it might be a little
 //	  complicated to read for you right now.
-const express = require('express');  
+const express = require('express'); 
+
+const PORT = process.env.PORT || 5000 
 
 // This creates our web app.
 const app = express();
@@ -68,7 +70,7 @@ io.on('connection', function(socket) {
 // Feel free to change it to another number, but doesn't change
 // anything. Just pick anything higher than 3000. (Other numbers
 // might be reserved for the operating system.
-http.listen(3000, function() {
+http.listen(PORT, function() {
 	console.log('Server started running on port 3000!');
 });
 
