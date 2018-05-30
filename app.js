@@ -53,15 +53,27 @@ app.get('/route', function(requestObject, responseObject) {
 	responseObject.send('Send whatever you want');
 });
 
+var userCount = 0;
 // Listen for socket connections
 io.on('connection', function(socket) {
+	userCount++;
 	console.log('User connected');
+
+	io.emit("updateUserCount", userCount);
+
 	// Listen for a particular socket sending a message.
 	socket.on('messageSent', function(message){
 		console.log('Message: ' + message);
 		// When we receive the message, send it to all
 		// other users on our site.
 		io.emit("messagePosted", message);
+	});
+
+	socket.on('disconnect', function(){
+		userCount--;
+		// When we receive the message, send it to all
+		// other users on our site.
+		io.emit("updateUserCount", userCount);
 	});
 });
 
@@ -71,6 +83,6 @@ io.on('connection', function(socket) {
 // anything. Just pick anything higher than 3000. (Other numbers
 // might be reserved for the operating system.
 http.listen(PORT, function() {
-	console.log('Server started running on port 3000!');
+	console.log('Server started running on port ' + PORT);
 });
 

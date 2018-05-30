@@ -11,6 +11,7 @@ window.onload = function() {
 	var sendButton = document.getElementById("sendButton");
 	var messageBox = document.getElementById("messageBox");
 	var messageList = document.getElementById("messageList");
+	var userCountDisplay = document.getElementById("userCountDisplay");
 
 	// When a user clicks the send-button,
 	sendButton.addEventListener("click", function() {
@@ -34,6 +35,10 @@ window.onload = function() {
 
 		// Add the message to the messageList so we can see it.
 		messageList.append(newListElement);
+	});
+
+	socket.on("updateUserCount", function(newCount) {
+		userCountDisplay.text = newCount + " Users Online"
 	});
 
 
