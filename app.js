@@ -54,6 +54,9 @@ app.get('/route', function(requestObject, responseObject) {
 });
 
 var userCount = 0;
+
+
+
 // Listen for socket connections
 io.on('connection', function(socket) {
 	userCount++;
